@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:drawable="@color/launcher_background"/>
+  <item
+      android:gravity="center"
+      android:tileMode="disabled"
+      android:drawable="@drawable/map_icon">
+  </item>
+</layer-list>
