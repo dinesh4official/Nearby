@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="UnExpectedCulture" xml:space="preserve">
+		<value>Expected Culture Identifier</value>
+	</data>
+	<data name="ErrorInteger" xml:space="preserve">
+		<value>Invalid Argument. Value must be an integer</value>
+	</data>
+	<data name="ErrorString" xml:space="preserve">
+		<value>Invalid Argument. Value must be a string</value>
+	</data>
+	<data name="BindableObjectError" xml:space="preserve">
+		<value>Invalid bindable object is assigned</value>
+	</data>
+	<data name="NoPriceDetails" xml:space="preserve">
+		<value>No price details</value>
+	</data>
+	<data name="Unrated" xml:space="preserve">
+		<value>Unrated</value>
+	</data>
+	<data name="LocationPermission" xml:space="preserve">
+		<value>Location Permission</value>
+	</data>
+	<data name="LocationPermissionDenied" xml:space="preserve">
+		<value>Location permission is not yet granted</value>
+	</data>
+	<data name="LocationAlertMessage" xml:space="preserve">
+		<value>Application requires location permission.</value>
+	</data>
+	<data name="UnableToFindLocation" xml:space="preserve">
+		<value>Unable to find the current location.</value>
+	</data>
+	<data name="Settings" xml:space="preserve">
+		<value>Settings</value>
+	</data>
+	<data name="Understood" xml:space="preserve">
+		<value>Okay, got it!</value>
+	</data>
+	<data name="Places" xml:space="preserve">
+		<value>Places</value>
+	</data>
+	<data name="SortByDistance" xml:space="preserve">
+		<value>Sort by Distance</value>
+	</data>
+	<data name="SortByRating" xml:space="preserve">
+		<value>Sort by Rating</value>
+	</data>
+	<data name="OrderByDistance" xml:space="preserve">
+		<value>"Order by Distance</value>
+	</data>
+	<data name="OrderByRating" xml:space="preserve">
+		<value>Order by Rating</value>
+	</data>
+	<data name="Ascending" xml:space="preserve">
+		<value> (Asc)</value>
+	</data>
+	<data name="Descending" xml:space="preserve">
+		<value> (Desc)</value>
+	</data>
+	<data name="NoNearbyPlacesFound" xml:space="preserve">
+		<value>No Places were returned for the current location.</value>
+	</data>
+	<data name="Sort" xml:space="preserve">
+		<value>Sort</value>
+	</data>
+	<data name="Cancel" xml:space="preserve">
+		<value>Cancel</value>
+	</data>
+	<data name="NoItemsFound" xml:space="preserve">
+		<value>Oops, No Items Found</value>
+	</data>
+</root>

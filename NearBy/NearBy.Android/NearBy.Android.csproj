@@ -68,6 +68,9 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
+    <Compile Include="Dependency\Message.cs" />
+    <Compile Include="Helpers\LocaleConfigurationAndroid.cs" />
+    <Compile Include="Helpers\SetupAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -109,12 +112,24 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Dependency\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NearBy\NearBy.csproj">
       <Project>{FE2CAC3A-4CA3-4D78-89A8-1E8AE5826135}</Project>
       <Name>NearBy</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NearByCore\NearByCore.csproj">
+      <Project>{4679D24F-86D2-4C78-8141-7F313E0A6CB8}</Project>
+      <Name>NearByCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\EncodeSans-Regular.ttf" />
+    <AndroidAsset Include="Assets\fa-brands-400.ttf" />
+    <AndroidAsset Include="Assets\fa-light-300.ttf" />
+    <AndroidAsset Include="Assets\fa-regular-400.ttf" />
+    <AndroidAsset Include="Assets\fa-solid-900.ttf" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

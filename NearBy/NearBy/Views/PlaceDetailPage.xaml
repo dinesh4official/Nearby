@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="NearBy.Views.PlaceDetailPage"
+	xmlns:control="clr-namespace:NearBy.Controls"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
+    Title="Place Details">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+		             BackgroundColor="Transparent"
+		             VerticalOptions="Start"
+		             HorizontalOptions="FillAndExpand">
+
+            <Image VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand"
+			       Source="{Binding FirstPhotoUrl}" Aspect="AspectFill"/>
+
+            <Label HorizontalOptions="FillAndExpand" FontSize="18"
+			       VerticalOptions="Start" Margin="5,5,5,0"
+			       TextColor="{StaticResource MediumGray}"
+			       LineBreakMode="WordWrap" Text="{Binding Name}"/>
+
+            <Label Margin="5" HorizontalOptions="StartAndExpand"
+			       HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand"
+				   Style="{StaticResource DefaultLabelStyle}"
+			       Text="{Binding AddressDigest}"/>
+
+            <Label Margin="5" HorizontalOptions="StartAndExpand"
+			       HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand"
+				   Style="{StaticResource DefaultLabelStyle}"
+			       Text="{Binding PhoneNumber}"/>
+
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+			      Margin="5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <control:RatingBar Grid.Column="0" HorizontalOptions="Start"
+								   VerticalOptions="Start"
+				                   AverageRating="{Binding AverageRating}"
+				                   NumberOfRatings="{Binding NumberOfRatings}"/>
+                <Label Grid.Column="1" VerticalOptions="Start" HorizontalOptions="End"
+				       Margin="0,0,2,0" Style="{StaticResource DefaultLabelStyle}"
+				       Text="{Binding PriceLevel, Converter={StaticResource PriceConvert}}"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

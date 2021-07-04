@@ -7,6 +7,9 @@ using Android.OS;
 using FFImageLoading.Forms.Platform;
 using Xamarin;
 using Android.Views;
+using NearBy.Helper.Utils;
+using NearByCore.Container;
+using NearBy.Droid.Helpers;
 
 namespace NearBy.Droid
 {
@@ -18,12 +21,13 @@ namespace NearBy.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            Window.AddFlags(WindowManagerFlags.Fullscreen);
-            Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
+           // Window.AddFlags(WindowManagerFlags.Fullscreen);
+           // Window.ClearFlags(WindowManagerFlags.ForceNotFullscreen);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             FormsMaps.Init(this, savedInstanceState);
             CachedImageRenderer.Init(true);
+            AppInitializer.Init(new SetupAndroid(), new SetupUi());
             LoadApplication(new App());
         }
 

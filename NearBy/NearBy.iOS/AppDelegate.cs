@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using FFImageLoading.Forms.Platform;
 using Foundation;
+using NearBy.Helper.Utils;
+using NearBy.iOS.Helpers;
+using NearByCore.Container;
 using UIKit;
 
 namespace NearBy.iOS
@@ -26,6 +29,7 @@ namespace NearBy.iOS
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsMaps.Init();
             CachedImageRenderer.Init();
+            AppInitializer.Init(new SetupiOS(), new SetupUi());
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

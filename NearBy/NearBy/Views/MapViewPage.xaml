@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:control="clr-namespace:NearBy.Controls"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
+    Title="MapView" x:Name="MapPage"
+    x:Class="NearBy.Views.MapViewPage">
+   <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <control:CustomMap x:Name="MapView" IsShowingUser="True" MoveToLastRegionOnLayoutChange="False"
+                              PinsItemsSource="{Binding MapInfos}"
+                              CurrentPosition="{Binding UserPosition}">
+                <control:CustomMap.Triggers>
+                    <DataTrigger TargetType="{x:Type control:CustomMap}"
+                                 Binding="{Binding IsBusy, Source={x:Reference MapPage}}"
+                                 Value="True">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </DataTrigger>
+                     <DataTrigger TargetType="{x:Type control:CustomMap}"
+                                 Binding="{Binding IsBusy, Source={x:Reference MapPage}}"
+                                 Value="False">
+                        <Setter Property="IsVisible" Value="True"/>
+                    </DataTrigger>
+                </control:CustomMap.Triggers>
+            </control:CustomMap>
+            <ActivityIndicator IsVisible="{Binding IsBusy, Source={x:Reference MapPage}}"
+                               IsRunning="{Binding IsBusy, Source={x:Reference MapPage}}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

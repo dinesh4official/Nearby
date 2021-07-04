@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:extensions="clr-namespace:NearBy.Helper.Extensions"
+    xmlns:templates="clr-namespace:NearBy.Templates"
+    xmlns:viewModel="clr-namespace:NearBy.ViewModels"
+    xmlns:resources="clr-namespace:NearByCore.Resources;assembly=NearByCore"
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    iOS:Page.UseSafeArea="true" NavigationPage.HasNavigationBar="False"
+    x:Name="Dashboard"
+    x:Class="NearBy.Views.DashboardPage"
+    Title="{extensions:Translate Places}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Priority="0" Command="{Binding ShowOnMap}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeRegular}"
+                                 Glyph="{StaticResource MapIcon}"
+                                 Size="Medium" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+        <ToolbarItem Priority="1" Command="{Binding ShowSortMenu}">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="{StaticResource FontAwesomeRegular}"
+                                 Glyph="{StaticResource SortIcon}"
+                                 Size="Medium" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.BindingContext>
+        <viewModel:PlacesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Spacing="0" BackgroundColor="#D3D3D3" Opacity="0.8">
+            <RefreshView IsRefreshing="{Binding IsBusy, Mode=OneWay}" Command="{Binding LoadItemsInPage}">
+                <CollectionView Margin="0,5,0,5" HorizontalOptions="FillAndExpand"
+                                ItemsUpdatingScrollMode="KeepLastItemInView"
+                                RemainingItemsThreshold="{Binding ItemsThreshold}"
+                                RemainingItemsThresholdReachedCommand="{Binding LoadItemsInPage}"
+                                HorizontalScrollBarVisibility="Never"
+                                VerticalScrollBarVisibility="Never"
+                                VerticalOptions="FillAndExpand" ItemsSource="{Binding PlacesInfos}"
+                                SelectionMode="None">
+                    <CollectionView.EmptyView>
+                        <ContentView>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                                <Label Text="{x:Static resources:AppResources.NoItemsFound}"
+                                       Style="{StaticResource DefaultLabelStyle}" FontSize="Title"
+                                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </StackLayout>
+                        </ContentView>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <templates:PlacesView>
+                                <templates:PlacesView.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding ItemSelected, Source={x:Reference Dashboard.BindingContext}}"
+                                        CommandParameter="{Binding .}"/>
+                                </templates:PlacesView.GestureRecognizers>
+                            </templates:PlacesView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
