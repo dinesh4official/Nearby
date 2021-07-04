@@ -4,6 +4,12 @@ This application shows the nearby restaurants, mall, grocery stores etc.., whic
 ## Architecture
 In this application, we have followed the MVVM Pattern.
 
+### Concepts
+
+- MVVM
+- Singleton
+- IoC Container
+
 ## Dependent Packages
 
 - [Autofac](https://www.nuget.org/packages/Autofac/)
