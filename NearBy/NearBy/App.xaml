@@ -1,8 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:NearBy.Helper.Converters"
              x:Class="NearBy.App">
     <Application.Resources>
+        <!-- Fonts -->
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesome">
+            <On Platform="Android" Value="fa-solid-900.ttf#Font Awesome 5 Pro Solid" />
+            <On Platform="iOS" Value="FontAwesome5Pro-Solid" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeLight">
+            <On Platform="Android" Value="fa-light-300.ttf#Font Awesome 5 Pro Light" />
+            <On Platform="iOS" Value="FontAwesome5Pro-Light" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeRegular">
+            <On Platform="Android" Value="fa-regular-400.ttf#Font Awesome 5 Pro Regular" />
+            <On Platform="iOS" Value="FontAwesome5Pro-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+            <On Platform="Android" Value="fa-brands-400.ttf#Font Awesome 5 Brands Regular" />
+            <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
+        </OnPlatform>
+        <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeEncodeSans">
+            <On Platform="Android" Value="EncodeSans-Regular.ttf#Encode Sans" />
+            <On Platform="iOS" Value="EncodeSans-Regular" />
+        </OnPlatform>
+
+        <!--Colors-->
+        <Color x:Key="Primary">#2196F3</Color>
+        <Color x:Key="PrimaryDark">#1976D2</Color>
+        <Color x:Key="Accent">#96d1ff</Color>
+        <Color x:Key="LinkBlue">#00abd6</Color>
+        <Color x:Key="LightBackgroundColor">#FAFAFA</Color>
+        <Color x:Key="DarkBackgroundColor">#C0C0C0</Color>
+        <Color x:Key="MediumGray">#4d4d4d</Color>
+        <Color x:Key="LightTextColor">#999999</Color>
+        <Color x:Key="HeaderTextColor">#101010</Color>
+        <Color x:Key="RatingColor">#F9D303</Color>
+
+        <!--Styles-->
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}" />
+            <Setter Property="BarTextColor" Value="White" />
+        </Style>
+
+        <Style x:Key="DefaultLabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextColor" Value="{StaticResource MediumGray}"/>
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+        </Style>
+
+        <!--Converters-->
+        <converter:PricingLevelConverter x:Key="PriceConvert" />
+
+         <!--FontIcons-->
+        <x:String x:Key="SortIcon">&#xf074;</x:String>
+        <x:String x:Key="MapIcon">&#xf59f;</x:String>
 
     </Application.Resources>
 </Application>

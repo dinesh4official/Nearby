@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+      xmlns:controls="clr-namespace:NearBy.Controls"
+      x:Class="NearBy.Templates.PlacesView"
+      Padding="2" Margin="2">
+    <Frame HasShadow="True" Padding="4,16,4,16">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                      ColumnSpacing="8" RowSpacing="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*" />
+                <ColumnDefinition Width=".6*" />
+                <ColumnDefinition Width=".2*" />
+            </Grid.ColumnDefinitions>
+            <forms:CachedImage Grid.Row="0" Grid.RowSpan="3" Grid.Column="0"
+                                       Source="{Binding ImageUrl}"
+                                       HeightRequest="75" WidthRequest="75"
+                                       LoadingPlaceholder="placeholder.png"
+                                       ErrorPlaceholder="placeholder.png"
+                                       DownsampleToViewSize="True"
+                                       CacheType="Memory" CacheDuration="5"
+                                       Aspect="AspectFit"/>
+            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                           TextColor="{StaticResource HeaderTextColor}"
+                           VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                           LineBreakMode="TailTruncation" FontSize="18"
+                           Text="{Binding Name}"/>
+            <controls:RatingBar Grid.Row="1" Grid.Column="1"
+                                        AverageRating="{Binding AverageRating}"/>
+            <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="End"
+                           Margin="0,0,2,0" VerticalOptions="CenterAndExpand"
+                           Style="{StaticResource DefaultLabel}"
+                           Text="{Binding Distance}"/>
+            <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="FillAndExpand"
+                           Margin="0,0,2,0" VerticalOptions="FillAndExpand"
+                           FontSize="14">
+                <Label.Triggers>
+                    <DataTrigger TargetType="Label" Binding="{Binding OpenNow}"
+                                         Value="True">
+                        <Setter Property="Text" Value="Open"/>
+                        <Setter Property="TextColor" Value="Green"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Label" Binding="{Binding OpenNow}"
+                                         Value="False">
+                        <Setter Property="Text" Value="Closed"/>
+                        <Setter Property="TextColor" Value="Red"/>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+        </Grid>
+    </Frame>
+</Grid>

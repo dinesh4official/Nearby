@@ -71,36 +71,39 @@
 		<None Include="Entitlements.plist" />
 		<None Include="Info.plist" />
 		<Compile Include="Properties\AssemblyInfo.cs" />
+		<Compile Include="Dependency\Message.cs" />
+		<Compile Include="Helpers\LocaleConfigurationiOS.cs" />
+		<Compile Include="Helpers\SetupiOS.cs" />
 	</ItemGroup>
 	<ItemGroup>
-		<InterfaceDefinition Include="Resources\LaunchScreen.storyboard"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon48.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon55.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon88.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon100.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon172.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon196.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon16.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon32.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon64.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon128.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon256.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon512.png"/>
-		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon216.png"/>
+		<InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon48.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon55.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon88.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon100.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon172.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon196.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon16.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon32.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon64.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon128.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon256.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon512.png" />
+		<ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon216.png" />
 	</ItemGroup>
 	<ItemGroup>
 		<Reference Include="System" />
@@ -126,11 +129,21 @@
 			<Project>{FE2CAC3A-4CA3-4D78-89A8-1E8AE5826135}</Project>
 			<Name>NearBy</Name>
 		</ProjectReference>
+		<ProjectReference Include="..\NearByCore\NearByCore.csproj">
+		  <Project>{4679D24F-86D2-4C78-8141-7F313E0A6CB8}</Project>
+		  <Name>NearByCore</Name>
+		</ProjectReference>
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Dependency\" />
+		<Folder Include="Helpers\" />
 	</ItemGroup>
 	<ItemGroup>
 		<BundleResource Include="Resources\map_icon.png" />
+		<BundleResource Include="Resources\EncodeSans-Regular.ttf" />
+		<BundleResource Include="Resources\fa-brands-400.ttf" />
+		<BundleResource Include="Resources\fa-light-300.ttf" />
+		<BundleResource Include="Resources\fa-regular-400.ttf" />
+		<BundleResource Include="Resources\fa-solid-900.ttf" />
 	</ItemGroup>
 </Project>
