@@ -4,7 +4,7 @@ This application shows the nearby restaurants, mall, grocery stores etc.., whic
 ## Architecture
 In this application, we have followed the MVVM Pattern.
 
-### Concepts
+## Concepts
 
 - MVVM
 - Singleton
